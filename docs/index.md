@@ -3,7 +3,7 @@ layout: page
 title: AddressBook Level-3
 ---
 
-[![Java CI](https://github.com/AY2425S1-CS2103T-W13-1/tp/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/AY2425S1-CS2103T-W13-1/tp/actions/workflows/gradle.yml)
+[![CI Status](https://github.com/AY2425S1-CS2103T-W13-1/tp/workflows/Java%20CI/badge.svg)](https://github.com/AY2425S1-CS2103T-W13-1/tp/actions)
 [![codecov](https://codecov.io/gh/se-edu/addressbook-level3/branch/master/graph/badge.svg)](https://codecov.io/gh/se-edu/addressbook-level3)
 
 ![Ui](images/Ui.png)
