@@ -36,22 +36,8 @@ jobs:
           java-version: '17'
           java-package: jdk+fx
 
-      - name: Install dependencies (Linux)
-        if: matrix.platform == 'ubuntu-latest'
-        run: sudo apt-get update && sudo apt-get install -y libgtk-3-0 xvfb
-
-      - name: Start Xvfb
-        if: matrix.platform == 'ubuntu-latest'
-        run: |
-          export DISPLAY=:99.0
-          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-        env:
-          DISPLAY: ":99.0"
-
       - name: Build and check with Gradle
         run: ./gradlew check coverage
-        env:
-          _JAVA_OPTIONS: "-Djava.awt.headless=true -Dtestfx.robot=glass -Dtestfx.headless=true -Dprism.order=sw"
 
       - name: Upload coverage reports to Codecov
         if: runner.os == 'Linux'
