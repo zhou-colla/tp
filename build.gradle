@@ -24,6 +24,8 @@ checkstyle {
 test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
+    jvmArgs '--add-opens', 'javafx.graphics/com.sun.javafx.application=ALL-UNNAMED'
+    jvmArgs '--add-opens', 'javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED'
 }
 
 task coverage(type: JacocoReport) {

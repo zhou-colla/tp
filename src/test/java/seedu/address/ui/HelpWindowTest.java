@@ -3,16 +3,18 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import org.testfx.framework.junit5.ApplicationTest;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.testfx.framework.junit5.ApplicationExtension;
+import org.testfx.framework.junit5.Start;
 
 import javafx.stage.Stage;
 
-
-public class HelpWindowTest extends ApplicationTest {
+@ExtendWith(ApplicationExtension.class)
+public class HelpWindowTest {
 
     private HelpWindow helpWindow;
 
-    @Override
+    @Start
     public void start(Stage primaryStage) {
         helpWindow = new HelpWindow(primaryStage);
     }
@@ -24,7 +26,7 @@ public class HelpWindowTest extends ApplicationTest {
 
     @Test
     public void checkOpenUrlInBrowser() {
-        assertDoesNotThrow(()-> {
+        assertDoesNotThrow(() -> {
             helpWindow.showHelp();
         });
     }
