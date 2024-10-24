@@ -108,6 +108,10 @@ public class HelpWindow extends UiPart<Stage> {
         webEngine.load(USERGUIDE_URL);
     }
 
+    public void showHelp() {
+        openUrlInBrowser();
+    }
+
     /**
      * Copies the URL to the user guide to the clipboard.
      */
