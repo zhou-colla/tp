@@ -24,7 +24,6 @@ checkstyle {
 test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
-    systemProperty 'java.awt.headless', 'true'
     jvmArgs '--add-opens', 'javafx.graphics/com.sun.javafx.application=ALL-UNNAMED'
     jvmArgs '--add-opens', 'javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED'
 }
@@ -64,6 +63,7 @@ dependencies {
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.7.0'
     implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.7.4'
 
+    testImplementation "org.testfx:openjfx-monocle:8u76-b04"
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: jUnitVersion
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
     testImplementation 'org.testfx:testfx-core:4.0.18'
