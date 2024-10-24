@@ -1,5 +1,9 @@
 package seedu.address.ui;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.logging.Logger;
 
 import javafx.fxml.FXML;
@@ -8,7 +12,10 @@ import javafx.scene.control.Label;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.stage.Stage;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import seedu.address.commons.core.LogsCenter;
+import java.awt.Desktop;
 
 /**
  * Controller for a help page
@@ -22,10 +29,13 @@ public class HelpWindow extends UiPart<Stage> {
     private static final String FXML = "HelpWindow.fxml";
 
     @FXML
-    private Button copyButton;
+    private Button urlButton;
 
     @FXML
     private Label helpMessage;
+
+    @FXML
+    private  WebView webView;
 
     /**
      * Creates a new HelpWindow.
@@ -35,6 +45,7 @@ public class HelpWindow extends UiPart<Stage> {
     public HelpWindow(Stage root) {
         super(FXML, root);
         helpMessage.setText(HELP_MESSAGE);
+        loadUserGuide();
     }
 
     /**
@@ -90,6 +101,14 @@ public class HelpWindow extends UiPart<Stage> {
     }
 
     /**
+     * Loads the user guide URL in the WebView.
+     */
+    public void loadUserGuide() {
+        WebEngine webEngine = webView.getEngine();
+        webEngine.load(USERGUIDE_URL);
+    }
+
+    /**
      * Copies the URL to the user guide to the clipboard.
      */
     @FXML
@@ -98,5 +117,15 @@ public class HelpWindow extends UiPart<Stage> {
         final ClipboardContent url = new ClipboardContent();
         url.putString(USERGUIDE_URL);
         clipboard.setContent(url);
+    }
+
+    @FXML
+    private void openUrlInBrowser() {
+        try {
+            Desktop.getDesktop().browse(new URI(USERGUIDE_URL));
+            logger.fine("Opened URL: " + USERGUIDE_URL);
+        } catch (IOException | URISyntaxException e) {
+            logger.warning("Failed to open URL: " + USERGUIDE_URL);
+        }
     }
 }
