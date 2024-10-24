@@ -41,6 +41,8 @@ public class HelpWindow extends UiPart<Stage> {
      */
     public HelpWindow(Stage root) {
         super(FXML, root);
+        assert webView != null : "WebView must be initialized";
+        assert helpMessage != null : "Help message label must be initialized";
         helpMessage.setText(HELP_MESSAGE);
         loadUserGuide();
     }
