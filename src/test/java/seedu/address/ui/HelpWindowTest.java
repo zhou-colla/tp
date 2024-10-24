@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 import org.testfx.framework.junit5.ApplicationTest;
+import org.testfx.framework.junit5.Start;
 
 import javafx.stage.Stage;
 
@@ -11,10 +12,9 @@ import javafx.stage.Stage;
 public class HelpWindowTest extends ApplicationTest {
 
     private HelpWindow helpWindow;
-    @Override
+    @Start
     public void start(Stage primaryStage) throws Exception {
         helpWindow = new HelpWindow();
-        helpWindow.show();
     }
 
     @Test
