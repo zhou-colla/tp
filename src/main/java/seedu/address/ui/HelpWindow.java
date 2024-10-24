@@ -1,9 +1,9 @@
 package seedu.address.ui;
 
+import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.logging.Logger;
 
 import javafx.fxml.FXML;
@@ -11,11 +11,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
-import javafx.stage.Stage;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import seedu.address.commons.core.LogsCenter;
-import java.awt.Desktop;
 
 /**
  * Controller for a help page
@@ -35,7 +34,7 @@ public class HelpWindow extends UiPart<Stage> {
     private Label helpMessage;
 
     @FXML
-    private  WebView webView;
+    private WebView webView;
 
     /**
      * Creates a new HelpWindow.
