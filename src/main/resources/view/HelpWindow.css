@@ -1,16 +1,16 @@
-#copyButton, #helpMessage {
+#urlButton, #helpMessage {
     -fx-text-fill: white;
 }
 
-#copyButton {
+#urlButton {
     -fx-background-color: dimgray;
 }
 
-#copyButton:hover {
+#urlButton:hover {
     -fx-background-color: gray;
 }
 
-#copyButton:armed {
+#urlButton:armed {
     -fx-background-color: darkgray;
 }
 

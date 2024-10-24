@@ -1,16 +1,16 @@
-#copyButton, #helpMessage {
+#urlButton, #helpMessage {
     -fx-text-fill: black; /* Keep text black for light theme */
 }
 
-#copyButton {
+#urlButton {
     -fx-background-color: lightgray; /* Light background for copy button */
 }
 
-#copyButton:hover {
+#urlButton:hover {
     -fx-background-color: gainsboro; /* Slightly darker shade for hover effect */
 }
 
-#copyButton:armed {
+#urlButton:armed {
     -fx-background-color: silver; /* Even darker shade when button is pressed */
 }
 
